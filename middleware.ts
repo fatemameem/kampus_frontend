@@ -16,7 +16,7 @@ const protectedPaths = [
 ];
 
 // Add paths that should be accessible only to non-authenticated users
-const authPaths = ['/signin', '/signup'];
+const authPaths = ['/signin', '/signup', '/about'];
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
@@ -35,11 +35,11 @@ export async function middleware(req: NextRequest) {
   const isAuthPath = authPaths.some((path) => pathname.startsWith(path));
 
   // If the path is protected and user is not authenticated
-  if (isProtectedPath && !session) {
-    const redirectUrl = new URL('/signin', req.url);
-    redirectUrl.searchParams.set('redirectTo', pathname);
-    return NextResponse.redirect(redirectUrl);
-  }
+  // if (isProtectedPath && !session) {
+  //   const redirectUrl = new URL('/signin', req.url);
+  //   redirectUrl.searchParams.set('redirectTo', pathname);
+  //   return NextResponse.redirect(redirectUrl);
+  // }
 
   // If user is authenticated and tries to access auth pages
   if (isAuthPath && session) {

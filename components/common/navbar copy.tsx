@@ -6,12 +6,11 @@ import { useRouter } from 'next/router';
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 
 //ui
-import { Menu, MenuItems, MenuButton, MenuItem } from '@headlessui/react';
+import { Menu } from '@headlessui/react';
 
 //components
 import LoginButton from '@/components/auth/LoginLogOutButton';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import Image from 'next/image';
 
 export default function Navbar() {
   const supabaseClient = useSupabaseClient();
@@ -22,13 +21,12 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/ourteam', label: 'Our Team' },
-    { href: '/events', label: 'Events' },
-    { href: '/jobs', label: 'Jobs' },
-    { href: '/housing', label: 'Housing' },
-    { href: '/alumni', label: 'Alumni' },
-    { href: '/blogs', label: 'Blogs' },
-    { href: '/faq', label: 'FAQ' },
+    { href: '/people', label: 'People' },
+    { href: '/jobs', label: 'Job' },
+    { href: '/rooms', label: 'Room' },
+    { href: '/events', label: 'Event' },
+    { href: '/meetups', label: 'Meetup' },
+    { href: '/blogs', label: 'Blog' },
   ];
 
   const handleSignOut = async () => {
@@ -37,11 +35,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav style={{backgroundColor:'#EDEEC0'}} className='border-b border-gray-200 dark:border-gray-700'>
-      <div className='container mx-auto p-8 flex items-center justify-between'>
+    <nav className='border-b border-gray-200 dark:border-gray-700'>
+      <div className='container mx-auto px-4 py-4 flex items-center justify-between'>
         {/* Logo */}
         <Link href='/' className='flex items-center text-xl font-bold'>
-          <Image src="/images/logo.png" alt="BDGSA" width={150} height={125} />
+          <MountainIcon className='h-6 w-6 mr-2' />
+          <span>Logo</span>
         </Link>
 
         {/* Mobile Menu Button */}
@@ -54,12 +53,15 @@ export default function Navbar() {
             <MenuIcon className='h-6 w-6' />
           </button>
         )}
+
+        {/* Navigation Links - Only visible when authenticated */}
+        {user && (
           <nav
             className={`${
               isMenuOpen
                 ? 'block absolute top-16 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg'
                 : 'hidden'
-            } lg:static lg:flex lg:shadow-none items-center gap-6 flex-1 text-sm font-medium justify-end px-4 py-2 lg:py-0`}
+            } lg:static lg:flex lg:shadow-none items-center gap-6 flex-1 text-sm font-medium justify-center px-4 py-2 lg:py-0`}
           >
             {navLinks.map((link) => (
               <Link
@@ -70,17 +72,19 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-          
+          </nav>
+        )}
+
         {/* Auth Section */}
         {!user ? (
-          <div className='flex gap-4 '>
+          <div className='flex gap-4'>
             <LoginButton />
-            {/* <Link
+            <Link
               href='/signup'
               className='inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900'
             >
               Join Now
-            </Link> */}
+            </Link>
           </div>
         ) : (
           <Menu as='div' className='relative'>
@@ -123,9 +127,27 @@ export default function Navbar() {
             </Menu.Items>
           </Menu>
         )}
-        </nav>
       </div>
     </nav>
+  );
+}
+
+function MountainIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='m8 3 4 8 5-5 5 15H2L8 3z' />
+    </svg>
   );
 }
 
