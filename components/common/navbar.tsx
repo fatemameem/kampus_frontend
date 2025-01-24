@@ -37,7 +37,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="border-b border-gray-200 dark:border-gray-700 bg-customKhaki">
+    <nav id='navbar' className="border-b border-gray-200 dark:border-gray-700 bg-customKhaki">
       <div className="container md:mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo (Hidden on small screens) */}
         <Link href="/" className="flex items-center text-xl font-bold hidden md:flex">

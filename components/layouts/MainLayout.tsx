@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Navbar from '@/components/common/navbar';
 import Head from 'next/head';
+import Footer from '../common/footer';
 
 export default function MainLayout({
   children,
@@ -39,6 +40,7 @@ export default function MainLayout({
       </Head>
       {!isNotFound && <Navbar />}
       <main>{children}</main>
+      {!isNotFound && <Footer />}
     </div>
   );
 }
