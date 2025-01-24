@@ -80,3 +80,10 @@
 *{
   font-family: Inter!important;
 }
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  /* Or any desired width */
+}

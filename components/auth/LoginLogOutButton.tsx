@@ -21,8 +21,7 @@ const LoginButton = () => {
   if (user) {
     return (
       <Button
-        style={{backgroundColor: '#006A4E' }}
-        className='text-white'
+        className='text-white bg-customGreen'
         onClick={() => {
           signout();
           setUser(null);
@@ -34,8 +33,7 @@ const LoginButton = () => {
   }
   return (
     <Button
-      style={{backgroundColor: '#006A4E' }}
-      className='text-white'
+      className='text-white bg-customGreen'
       variant='outline'
       onClick={() => {
         router.push('/signin');

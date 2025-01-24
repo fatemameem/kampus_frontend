@@ -24,6 +24,14 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        customKhaki: "#EDEEC0",
+        customGreen: "#006A4E",
+        customKhakiDark:"#A7A284",
+        customRed:"#F42A41",
+        customGray:"#828282",
+        boxShadow: {
+          'custom-navbar': '0px 2px 4px rgba(0, 0, 0, 0.1)', // Adjust values as needed
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

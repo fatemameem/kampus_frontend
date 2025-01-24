@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import Navbar from '@/components/common/navbar';
+import Head from 'next/head';
 
 export default function MainLayout({
   children,
@@ -32,6 +33,10 @@ export default function MainLayout({
   }, [router]);
   return (
     <div>
+      <Head>
+        <title>Bangladeshi Graduate Students&apos; Association (BDGSA)</title>
+        <meta name="description" content="Official website of the BDGSA community" />
+      </Head>
       {!isNotFound && <Navbar />}
       <main>{children}</main>
     </div>
