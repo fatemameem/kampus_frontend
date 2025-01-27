@@ -84,6 +84,23 @@
 .centered {
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  /* width: 50%; */
   /* Or any desired width */
+}
+
+.stats{
+  width: 60.75%; 
+  bottom: 18.75%;
+}
+
+@media screen and (max-width: 1023px) {
+  .stats{
+    width: 100%; 
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width:1439px) {
+  .stats {
+    bottom: 12.75%;
+  }
 }

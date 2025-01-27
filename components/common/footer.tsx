@@ -11,13 +11,13 @@ export default function Footer(){
   ];
   return (
     <section className="bg-customKhaki py-7">
-      <div className="container mx-auto grid grid-cols-12 gap-8">
+      <div className="container mx-auto grid lg:grid-cols-12 gap-8">
         <div className="col-span-2">
           <Link href="#navbar">
               <Image src="/images/logo.png" alt="BDGSA" width={256} height={256} className="" />
           </Link>
         </div>
-        <div className="col-span-4 flex flex-col justify-center">
+        <div className="col-span-4 flex flex-col justify-center p-2 lg:p-0">
           <h2 className="text-xl font-bold text-customGreen uppercase">Do you have<br/> any questions?</h2>
           <p className="text-xs text-customGreen uppercase">
             Feel free to send us your questions or request support.
@@ -36,7 +36,7 @@ export default function Footer(){
         </div>
         <div className="col-span-4">
           {/* location */}
-          <div className="flex gap-5 justify-start items-center px-2 py-6">
+          <div className="flex gap-5 justify-start items-center px-2 lg:py-6">
             <div className="text-customRed">
               <span><svg width="20" height="27" viewBox="0 0 20 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.666504 9.99984C0.666504 4.83984 4.83984 0.666504 9.99984 0.666504C15.1598 0.666504 19.3332 4.83984 19.3332 9.99984C19.3332 15.5598 13.4398 23.2265 11.0265 26.1465C10.4932 26.7865 9.51984 26.7865 8.9865 26.1465C6.55984 23.2265 0.666504 15.5598 0.666504 9.99984ZM6.6665 9.99984C6.6665 11.8398 8.15984 13.3332 9.99984 13.3332C11.8398 13.3332 13.3332 11.8398 13.3332 9.99984C13.3332 8.15984 11.8398 6.6665 9.99984 6.6665C8.15984 6.6665 6.6665 8.15984 6.6665 9.99984Z" fill="#F42A41"/>
               </svg></span>
@@ -46,7 +46,7 @@ export default function Footer(){
             </div>
           </div>
           {/* contact information */}
-          <div className="flex gap-8 justify-start items-center px-2 py-6">
+          <div className="flex flex-col lg:flex-row gap-8 justify-start lg:items-center px-2 py-6">
             <div className="flex gap-4 justify-start items-center">
               <div className="text-customRed">
                 <span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.6401 16.68L18.2534 16.2933C17.4401 16.2 16.6401 16.48 16.0667 17.0533L13.6134 19.5067C9.84006 17.5867 6.74672 14.5067 4.82672 10.72L7.29339 8.25335C7.86672 7.68001 8.14672 6.88001 8.05339 6.06668L7.66672 2.70668C7.50672 1.36001 6.37339 0.34668 5.01339 0.34668H2.70672C1.20005 0.34668 -0.0532791 1.60001 0.0400542 3.10668C0.746721 14.4933 9.85339 23.5867 21.2267 24.2933C22.7334 24.3867 23.9867 23.1333 23.9867 21.6267V19.32C24.0001 17.9733 22.9867 16.84 21.6401 16.68Z" fill="#F42A41"/></svg></span>
@@ -65,7 +65,7 @@ export default function Footer(){
             </div>
           </div>
           {/* social media links */}
-          <div className="flex gap-5 justify-start items-center px-2 py-6">
+          <div className="flex flex-col lg:flex-row gap-5 justify-start lg:items-center px-2 py-6">
             <p className="text-customGreen text-sm uppercase font-extrabold text-opacity-60">Social Media</p>
             <div className="flex gap-7 items-center justify-start">
               {/* facebook icon */}
