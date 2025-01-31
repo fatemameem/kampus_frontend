@@ -28,7 +28,7 @@ export default function Home() {
               </div>
 
               {/* Right Content */}
-              <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-end relative">
+              <div className="mt-10 lg:mt-0 lg:w-1/2 flex justify-end self-end relative">
                 <div className="relative">
                   <Image
                     src="/images/banner.png"
@@ -44,7 +44,7 @@ export default function Home() {
           <section className="our-story py-6 md:py-12 lg:py-24">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Image Section */}
-              <div className="col-span-5">
+              <div className="col-span-5 justify-items-center">
                 <Image
                   src="/images/homepage-img1.jpeg"
                   alt="BDGSA Image"
