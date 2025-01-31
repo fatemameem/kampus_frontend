@@ -93,6 +93,15 @@
   bottom: 18.75%;
 }
 
+.navbar-shadow {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  /* Soft shadow effect */
+  z-index: 1000;
+  /* Ensures it stays above other elements */
+  position: relative;
+  /* Ensures the shadow appears correctly */
+}
+
 @media screen and (max-width: 1023px) {
   .stats{
     width: 100%; 

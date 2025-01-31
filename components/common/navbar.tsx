@@ -37,10 +37,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav id='navbar' className="border-b border-gray-200 dark:border-gray-700 bg-customKhaki">
-      <div className="container md:mx-auto px-4 py-4 flex items-center justify-between">
+    <nav id='navbar' className="border-b border-gray-200 dark:border-gray-700 bg-customKhaki navbar-shadow">
+      <div className="container md:mx-auto px-4 py-4 md:py-0 flex items-center justify-between">
         {/* Logo (Hidden on small screens) */}
-        <Link href="/" className="flex items-center text-xl font-bold hidden md:flex">
+        <Link href="/" className="items-center text-xl font-bold hidden md:flex">
           <Image src="/images/logo.png" alt="BDGSA" width={100} height={75} />
         </Link>
 
