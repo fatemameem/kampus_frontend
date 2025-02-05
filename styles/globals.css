@@ -113,3 +113,10 @@
     bottom: 12.75%;
   }
 }
+
+@media screen and (min-width: 1536px) {
+  .custom-position{
+    right: -20%!important;
+    justify-content: center!important;
+  }
+}
