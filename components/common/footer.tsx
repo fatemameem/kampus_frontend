@@ -5,7 +5,7 @@ export default function Footer(){
     const footerLinks = [
     { href: '/faq', label: 'FAQ' },
     { href: '/bylaws', label: 'By-Laws' },
-    { href: '/contactus', label: 'Help' },
+    { href: '/contact-us', label: 'Help' },
     { href: '/privacy', label: 'Privacy Policy' },
     { href: '/disclaimer', label: 'Disclaimer' },
   ];

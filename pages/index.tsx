@@ -21,7 +21,7 @@ export default function Home() {
                 </h1>
                 <Link
                   key="about"
-                  href="/about"
+                  href="/about-us"
                   className="bg-customGreen text-white px-6 py-3 text-lg rounded-full shadow-md hover:bg-customKhakiDark"
                 >
                   Learn More
