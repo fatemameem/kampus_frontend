@@ -38,7 +38,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex justify-center flex-col gap-4">
-      <div className="flex gap-12 justify-between items-center">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-12 justify-between items-center">
         <div className="w-full">
           <p className="text-customGreen pb-2 text-sm">First Name</p>
           <input
