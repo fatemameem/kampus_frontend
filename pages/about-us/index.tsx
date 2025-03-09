@@ -51,7 +51,7 @@ const AboutPage: React.FC = () => {
         <div className="established container mx-auto py-4 md:py-8">
           <p className="text-customGreen text-2xl md:text-4xl font-semibold pb-8 md:pb-16">Our Mission</p>
           <div className="flex md:flex-row flex-col justify-between items-start md:w-3/4 gap-8 md:gap-16">
-            <p className='order-2 md:order-1 text-sm font-light text-customGray'>
+            <li className='text-sm font-light text-customGray list-none'>
               BDGSA is dedicated to fostering a vibrant community for Bangladeshi graduate students at Concordia University by:
               <ul className='list-disc pl-8'>
                 <li className='py-2'>Promoting Academic Excellence: Supporting members&apos; academic pursuits and providing resources for success.</li>
@@ -59,19 +59,22 @@ const AboutPage: React.FC = () => {
                 <li className='py-2'>Advocating for Student Rights: Representing the interests of Bangladeshi graduate students and advocating for their rights within the university community.</li>
                 <li className='py-2'>Building Community: Creating opportunities for social interaction, networking, and personal development.</li>
               </ul>
-            </p>
+            </li>
             <Image className='justify-self-end md:w-1/2 rounded-lg' src="/images/about-us-img2.jpeg" alt="" width={625} height={495} />
           </div>
         </div>
       </section>
       <section className="our-vision relative">
         <div className="established container mx-auto py-4 md:py-8">
-          <div className="flex lg:flex-row flex-col justify-between items-start md:w-3/4 gap-2">
-            <Image className='order-2 md:order-1 justify-self-end lg:w-2/3 rounded-lg' src="/images/about-us-img3.jpeg" alt="" width={925} height={400} />
-            <p className="text-customGreen text-2xl md:text-4xl font-semibold">Our Vision</p>
+          <div className="flex lg:flex-row flex-col justify-between items-center md:w-3/4 gap-6">
+            <Image className='order-2 md:order-1 justify-self-end self-end lg:w-2/3 rounded-lg' src="/images/about-us-img3.jpeg" alt="" width={925} height={400} />
+            <div className='order-1 md:order-2'>
+              <p className="text-customGreen text-2xl md:text-4xl font-semibold pb-8 md:pb-14">Our Vision</p>
+              <p className='text-sm font-light text-customGray'>Our vision is to build an inclusive, supportive, and empowering environment where Bangladeshi graduate students at Concordia University can thrive academically, socially, and culturally. By promoting lifelong learning, cultural enrichment, and personal growth, we aim to bridge diverse perspectives and strengthen intercultural connections. We envision a community where students feel supported in achieving their academic and professional goals while staying connected to their cultural roots. Through collaboration and advocacy, we strive to leave a lasting impact on both the university and the broader community.</p>
+            </div>
           </div>
         </div>
-        <div className='custom-position absolute top-0 hidden -right-1/4 lg:-right-1/3 w-full h-full transform rotate-90 md:flex justify-start'>
+        <div className='custom-position absolute top-0 hidden -right-1/5 customscreenmd:-right-1/4 customlg:-right-1/3 w-full h-full transform rotate-90 md:flex justify-start'>
           <h1 className="opacity-20 text-customRed text-9xl font-bold text-center leading-none whitespace-nowrap">B&nbsp; &nbsp; D &nbsp; &nbsp; G &nbsp; &nbsp; S &nbsp; &nbsp; A</h1>
         </div>
       </section>

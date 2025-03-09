@@ -80,6 +80,13 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      inset: {
+        '-1/5': '-20%', // Adds -20% for right, left, top, or bottom
+      },
+      screens: {
+        customlg: "1370px", // Custom screen size with min-width 1370px
+        customscreenmd: "1270px", // Custom screen size with min-width 1370px
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

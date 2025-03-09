@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -19,17 +19,38 @@ export default function Navbar() {
   const router = useRouter();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [validLinks, setValidLinks] = useState<{ href: string; label: string }[]>([]);
 
-  const navLinks = [
+  const navLinks = useMemo(() => [
     { href: '/', label: 'Home' },
-    { href: '/ourteam', label: 'Our Team' },
+    { href: '/people/our-team', label: 'Our Team' },
     { href: '/events', label: 'Events' },
     { href: '/jobs', label: 'Jobs' },
     { href: '/housing', label: 'Housing' },
-    { href: '/alumni', label: 'Alumni' },
+    { href: '/people/alumni', label: 'Alumni' },
     { href: '/blogs', label: 'Blogs' },
+    { href: '/about-us', label: 'About Us' },
     { href: '/faq', label: 'FAQ' },
-  ];
+  ], []);
+
+  useEffect(() => {
+    const checkLinks = async () => {
+      const valid = [];
+      for (const link of navLinks) {
+        try {
+          const response = await fetch(link.href);
+          if (response.status !== 404) {
+            valid.push(link);
+          }
+        } catch (error) {
+          console.error("Error checking link:", link.href, error);
+        }
+      }
+      setValidLinks(valid);
+    };
+
+    checkLinks();
+  }, [navLinks]);
 
   const handleSignOut = async () => {
     await supabaseClient.auth.signOut();
@@ -58,10 +79,10 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center md:gap-4 gap-6 text-sm font-medium">
-          {navLinks.map((link) => (
+          {validLinks.map((link) => (
             <Link
               key={link.href}
-              className="hover:text-gray-600 dark:hover:text-gray-300"
+              className="hover:text-customGreen dark:hover:text-gray-300"
               href={link.href}
             >
               {link.label}
@@ -80,7 +101,7 @@ export default function Navbar() {
             </div>
             {/* Navigation Links */}
             <div className="flex flex-col gap-2 p-2">
-              {navLinks.map((link) => (
+              {validLinks.map((link) => (
                 <Link
                   key={link.href}
                   className="block py-2 hover:text-gray-600 dark:hover:text-gray-300"

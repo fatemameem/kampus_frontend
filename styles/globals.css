@@ -107,6 +107,29 @@
   height: 950px;
 }
 
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.our-team-text-pos{
+  top: 80%;
+  right: 10%;
+}
+
+.special-card{
+  background: radial-gradient(50% 75.3% at 50% 50%, #006A4E 0%, #EDEEC0 100%);
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+}
+
+.shape{
+  clip-path: path('M 0 200 L 0,75 A 5,5 0,0,1 150,75 L 200 200 z');
+}
+
+.left-img{
+  top: -15%;
+  right: 5%
+}
+
 @media screen and (max-width: 1023px) {
   .stats{
     width: 100%; 
@@ -117,6 +140,16 @@
   .map-style {
     width: 100vw;
     height: 650px;
+  }
+  .our-team-text-pos {
+    top: 80%;
+    right: 10%;
+  }
+}
+@media screen  and (min-width:1024px) and (max-width: 1279px) {
+  .our-team-text-pos {
+    top: 85%;
+    right: -5%;
   }
 }
 

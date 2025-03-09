@@ -1,14 +1,35 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
 
 export default function Footer(){
-    const footerLinks = [
+  const footerLinks = useMemo(() => [
     { href: '/faq', label: 'FAQ' },
     { href: '/bylaws', label: 'By-Laws' },
     { href: '/contact-us', label: 'Help' },
     { href: '/privacy', label: 'Privacy Policy' },
     { href: '/disclaimer', label: 'Disclaimer' },
-  ];
+  ], []);
+  const [validLinks, setValidLinks] = useState<{ href: string; label: string }[]>([]);
+  useEffect(() => {
+      const checkLinks = async () => {
+        const valid = [];
+        for (const link of footerLinks) {
+          try {
+            const response = await fetch(link.href);
+            if (response.status !== 404) {
+              valid.push(link);
+            }
+          } catch (error) {
+            console.error("Error checking link:", link.href, error);
+          }
+        }
+        setValidLinks(valid);
+      };
+  
+      checkLinks();
+    }, [footerLinks]);
+
   return (
     <section className="bg-customKhaki py-7">
       <div className="container mx-auto grid lg:grid-cols-12 gap-8">
@@ -24,7 +45,7 @@ export default function Footer(){
           </p>
         </div>
         <div className="col-span-2 flex flex-col justify-center">
-          {footerLinks.map((link) => (
+          {validLinks.map((link) => (
             <Link
               key={link.href}
               className="text-customGreen uppercase p-2 text-sm text-opacity-60 font-bold"

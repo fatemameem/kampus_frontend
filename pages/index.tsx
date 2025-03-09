@@ -12,7 +12,7 @@ export default function Home() {
       {!session ? (
         // Landing Page for unauthenticated users
         <>
-          <section className="banner bg-customKhaki relative lg:pb-16">
+          <section className="banner bg-customKhaki relative">
             <div className="ps-8 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between relative">
               {/* Left Content */}
               <div className="flex flex-col items-start justify-center lg:w-1/2 px-4 z-10 relative ">
